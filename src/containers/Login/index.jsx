@@ -1,0 +1,102 @@
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { api } from '../../services/api';
+import {
+  Container,
+  LeftContainer,
+  Logo,
+  RightContainer,
+  Title,
+  Form,
+  Link,
+} from './styles';
+import LogoPng from '../../assets/logo.png';
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { toast } from 'react-toastify';
+import { Await, useNavigate } from 'react-router-dom';
+
+export function Login() {
+  const navigate = useNavigate();
+
+  const schema = yup
+    .object({
+      email: yup
+        .string()
+        .email('Coloque um e-mail válido')
+        .required('O E-mail e obrigatório'),
+      password: yup
+        .string()
+        .min(8, 'A Senha deve ter no 8 caracteres')
+        .required('Senha e obrigatório'),
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const { status } = await api.post(
+        '/session',
+        {
+          email: data.email,
+          password: data.password,
+        },
+        {
+          validateStatus: () => true,
+        },
+      );
+      if (status === 200 || status === 201) {
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+        toast.success('Login realizado com sucesso');
+      } else if (status === 401) {
+        toast.error('Usuário não cadastrado!, Se cadastre para continuar  ');
+      } else throw new Error();
+      console.log(status);
+    // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      toast.error('Erro no servidor! , Tente novamente!');
+    }
+  };
+
+  return (
+    <Container>
+      <LeftContainer>
+        <Logo src={LogoPng} alt="logo-burgerKing" />
+      </LeftContainer>
+      <RightContainer>
+        <Title>
+          Olá, seja bem vindo ao <span>Dev Burguer!</span> Acesse com seu{' '}
+          <span>Login e senha.</span>
+        </Title>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            label={'E-mail'}
+            type={'email'}
+            error={errors.email?.message}
+            {...register('email')}
+          />
+          <Input
+            label={'Senha'}
+            type={'password'}
+            error={errors.password?.message}
+            {...register('password')}
+          />
+          <Button type="submit">Entrar</Button>
+          <p>
+            Não possui conta? <Link to={'/cadastro'}>Clique aqui.</Link>
+          </p>
+        </Form>
+      </RightContainer>
+    </Container>
+  );
+}
