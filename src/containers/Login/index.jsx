@@ -12,13 +12,15 @@ import {
   Link,
 } from './styles';
 import LogoPng from '../../assets/logo.png';
-import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
+import { Button, Input } from '../../components';
 import { toast } from 'react-toastify';
-import { Await, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../hooks/UserContext';
 
 export function Login() {
   const navigate = useNavigate();
+
+  const { putUserData } = useUser();
 
   const schema = yup
     .object({
@@ -43,7 +45,7 @@ export function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const { status } = await api.post(
+      const { status, data: userData } = await api.post(
         '/session',
         {
           email: data.email,
@@ -53,6 +55,7 @@ export function Login() {
           validateStatus: () => true,
         },
       );
+
       if (status === 200 || status === 201) {
         setTimeout(() => {
           navigate('/');
@@ -61,8 +64,10 @@ export function Login() {
       } else if (status === 401) {
         toast.error('Usuário não cadastrado!, Se cadastre para continuar  ');
       } else throw new Error();
-      console.log(status);
-    // eslint-disable-next-line no-unused-vars
+      console.log(userData);
+      putUserData(userData);
+
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Erro no servidor! , Tente novamente!');
     }

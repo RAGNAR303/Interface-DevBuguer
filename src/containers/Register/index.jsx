@@ -12,8 +12,7 @@ import {
   Link,
 } from './styles';
 import LogoPng from '../../assets/logo.png';
-import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
+import { Button, Input } from '../../components';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -71,7 +70,6 @@ export function Register() {
         throw new Error();
       }
 
-      console.log(status);
       // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error(`Falha no sistema! Tente novamente`);

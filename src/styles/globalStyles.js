@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
+import background from '../assets/background1.png';
 
 const globalStyles = createGlobalStyle`
 
@@ -10,12 +11,22 @@ box-sizing: border-box;
 outline: none;
  font-family: "M PLUS Rounded 1c", sans-serif;
 
-  
-
 }
-button {
+button , a {
     cursor: pointer;
+    text-decoration: none;
 }
+
+body{
+ background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('${background}');
+     background-color: #121218ff;
+     backdrop-filter: blur(1px);
+     color: #fff;
+}
+
+
 
 `;
 
