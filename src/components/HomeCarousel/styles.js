@@ -40,7 +40,8 @@ export const Banner = styled.div`
   position: absolute;
   z-index: 2;
   h1 {
-    color: #f17535;
+    color: ${(props) => props.theme.orange};
+
     font-size: 50px;
     font-family: 'Lilita One', sans-serif;
     position: relative;

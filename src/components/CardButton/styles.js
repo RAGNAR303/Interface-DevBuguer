@@ -5,7 +5,8 @@ export const ButtonContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f17535;
+  background-color: ${(props) => props.theme.orange};
+
   color: #121f25ff;
   font-weight: 900;
   font-size: 20px;

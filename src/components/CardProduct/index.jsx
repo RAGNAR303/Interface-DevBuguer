@@ -1,8 +1,9 @@
-import { BasketIcon, SealPercentIcon } from '@phosphor-icons/react';
+import { BasketIcon, PlusIcon, SealPercentIcon } from '@phosphor-icons/react';
 import { CardButton } from '../CardButton';
 import { CardImg, Container, Content, ContainerButton, Offer } from './styles';
 import PropTypes from 'prop-types';
 import { useCart } from '../../hooks/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 CardProduct.PropTypes = {
   product: PropTypes.object,
@@ -10,6 +11,8 @@ CardProduct.PropTypes = {
 
 export function CardProduct({ product }) {
   const { putProductInCart } = useCart();
+
+  const navigate = useNavigate();
 
   return (
     <Container key={product.key}>
@@ -23,9 +26,11 @@ export function CardProduct({ product }) {
       </Content>
       <ContainerButton>
         <strong>{product.currencyValue}</strong>
-        {/* <CardButton>{<BasketIcon size={32} weight="fill" />}</CardButton> */}
+        <CardButton onClick={() => navigate('/carrinho')}>
+          {<BasketIcon size={25} weight="bold" />}
+        </CardButton>
         <CardButton onClick={() => putProductInCart(product)}>
-          {<BasketIcon size={32} weight="fill" />}
+          {<PlusIcon size={25} weight="bold" />}
         </CardButton>
       </ContainerButton>
     </Container>

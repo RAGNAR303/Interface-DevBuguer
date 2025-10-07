@@ -16,6 +16,7 @@ import { Button, Input } from '../../components';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/UserContext';
+import { EnvelopeSimpleIcon, LockSimpleIcon } from '@phosphor-icons/react';
 
 export function Login() {
   const navigate = useNavigate();
@@ -58,7 +59,12 @@ export function Login() {
 
       if (status === 200 || status === 201) {
         setTimeout(() => {
-          navigate('/');
+          if (userData.admin) {
+            navigate('/admin/pedidos');
+          } else {
+            navigate('/');
+          }
+          console.log({ userData });
         }, 2000);
         toast.success('Login realizado com sucesso');
       } else if (status === 401) {
@@ -83,15 +89,18 @@ export function Login() {
           Olá, seja bem vindo ao <span>Dev Burguer!</span> Acesse com seu{' '}
           <span>Login e senha.</span>
         </Title>
+
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
-            label={'E-mail'}
+            icon={<EnvelopeSimpleIcon size={20} weight="fill" />}
+            placeholder={'E-mail'}
             type={'email'}
             error={errors.email?.message}
             {...register('email')}
           />
           <Input
-            label={'Senha'}
+            icon={<LockSimpleIcon size={20} weight="fill" />}
+            placeholder={'Senha'}
             type={'password'}
             error={errors.password?.message}
             {...register('password')}

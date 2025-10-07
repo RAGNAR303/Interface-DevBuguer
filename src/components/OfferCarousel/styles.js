@@ -30,7 +30,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #ffe079ff;
+  color: ${(props) => props.theme.amber};
+
   font-size: 40px;
   letter-spacing: 3px;
   font-family: 'Lilita One', sans-serif;
@@ -43,7 +44,8 @@ export const Title = styled.h1`
     position: absolute;
     width: 100px;
     height: 4px;
-    background-color: #ffe079ff;
+    background-color: ${(props) => props.theme.amber};
+
     bottom: 0;
     left: calc(50% - 50px);
   }

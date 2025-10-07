@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import { InputContainer } from './styles';
 
-export function Input({ label, type, error, ...props }) {
+export function Input({ placeholder, type, error, icon, ...props }) {
   return (
     <InputContainer>
-      <label htmlFor="">{label}</label>
       <div>
-        <input type={type} {...props} />
+        {icon}
+        <input type={type} {...props} placeholder={placeholder} />
       </div>
-
       <span>{error}</span>
     </InputContainer>
   );

@@ -38,7 +38,8 @@ export const RightContainer = styled.div`
   }
 
   a {
-    color: #f17535;
+    color: ${(props) => props.theme.orange};
+
     text-decoration: none;
     transition: all 0.5s ease-in-out;
   }
@@ -54,7 +55,8 @@ export const Title = styled.h1`
   font-family: 'Lilita One', sans-serif;
   color: #fff;
   span {
-    color: #f17535;
+    color: ${(props) => props.theme.orange};
+
     font-family: 'Lilita One', sans-serif;
   }
 `;
@@ -74,7 +76,8 @@ export const Form = styled.form`
 `;
 
 export const Link = styled(ReactLink)`
-  color: #f17535;
+  color: ${(props) => props.theme.orange};
+
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 

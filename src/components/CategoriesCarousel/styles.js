@@ -25,7 +25,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #f17535;
+  color: ${(props) => props.theme.orange};
+
   font-size: 40px;
   font-family: 'Lilita One', sans-serif;
   text-align: center;
@@ -38,7 +39,8 @@ export const Title = styled.h1`
     position: absolute;
     width: 100px;
     height: 4px;
-    background-color: #f17535;
+    background-color: ${(props) => props.theme.orange};
+
     bottom: 0;
 
     left: calc(50% - 50px);
@@ -94,7 +96,8 @@ export const CategoryLink = styled(Link)`
   transition: color 0.3s ease-in;
 
   &:hover {
-    color: #ffe079ff;
+    color: ${(props) => props.theme.amber};
+
     text-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.5);
   }
 `;

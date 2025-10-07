@@ -22,7 +22,7 @@ body{
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('${background}');
      background-color: #121218ff;
-     backdrop-filter: blur(1px);
+ 
      color: #fff;
 }
 

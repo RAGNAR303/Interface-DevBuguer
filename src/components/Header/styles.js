@@ -41,13 +41,14 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   font-weight: 900;
   font-size: 20px;
-  color: ${(props) => (props.$isActive ? '#f17535' : '#fff')};
+  color: ${(props) =>
+    props.$isActive ? `${props.theme.orange}` : `${props.theme.white}`};
   gap: 5px;
 
   transition: color 0.5s ease-in-out;
 
   &:hover {
-    color: #f17535;
+    color: ${(props) => props.theme.orange};
   }
 `;
 
@@ -56,7 +57,8 @@ export const Profile = styled.div`
   gap: 10px;
   align-items: center;
   justify-content: center;
-  color: #ffe079ff;
+  color: ${(props) => props.theme.amber};
+
   p {
     font-weight: 900;
     color: #fff;
@@ -64,7 +66,7 @@ export const Profile = styled.div`
   }
 
   span {
-    color: #ffe079ff;
+    color: ${(props) => props.theme.amber};
   }
 `;
 
@@ -79,12 +81,14 @@ export const Logout = styled.button`
   gap: 5px;
   padding: 2px;
   border-radius: 2px;
-  color: #7b7b7bff;
+  color: ${(props) => props.theme.red};
+
   transition: color 0.5s ease-in-out;
 
   &:hover {
-    color: #bd0000ff;
-    background: #121f25b5;
+    color: ${(props) => props.theme.redHover};
+
+    background: ${(props) => props.theme.gray};
   }
 `;
 
@@ -98,12 +102,9 @@ export const CountContainer = styled.div`
     top: -10px;
     right: -10px;
     font-size: 10px;
-    background: #616161ff;
+    background-color: ${(props) => props.theme.orange};
     padding: 2px 6px;
     border-radius: 50%;
-  }
-
-  span:hover {
     color: #000;
   }
 `;

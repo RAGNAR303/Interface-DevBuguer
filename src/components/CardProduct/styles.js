@@ -37,7 +37,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 10px;
 
   h3 {
@@ -61,13 +61,16 @@ export const ContainerButton = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 40px;
   gap: 10px;
   padding: 10px;
+  margin-bottom: 10px;
 
   strong {
     color: #121f25ff;
     font-size: 20px;
-    background-color: #ffe079ff;
+    background-color: ${(props) => props.theme.amber};
+
     padding: 10px;
     border-radius: 5px;
   }

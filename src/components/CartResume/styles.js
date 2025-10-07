@@ -27,10 +27,12 @@ export const Container = styled.div`
   .title {
     grid-area: title;
     text-align: center;
-    border-bottom: 1px solid #f17535;
+    border-bottom: 1px solid ${(props) => props.theme.orange};
     margin-bottom: 20px;
     padding-bottom: 10px;
-    color: #ffe079ff;
+    color: ${(props) => props.theme.amber};
+
+    text-transform: uppercase;
   }
 
   .items {

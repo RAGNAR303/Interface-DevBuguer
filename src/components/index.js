@@ -10,4 +10,8 @@ export * from './OfferCarousel';
 export * from './Table';
 export * from './CartItems';
 export * from './CartResume';
+export * from './Stripe/CheckoutForm';
+export * from './layouts/UserLayout';
+export * from './layouts/AdminLayout';
+export * from './SideNavAdmin';
 // Exporta tudo que está nos components

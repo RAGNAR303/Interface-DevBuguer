@@ -26,7 +26,7 @@ export const Title = styled.h1`
   color: ${(props) => props.theme.orange};
 
   text-align: center;
-  margin: 30px;
+  margin: 10px;
   font-weight: 900;
   letter-spacing: 2px;
   position: relative;
@@ -45,11 +45,10 @@ export const Title = styled.h1`
 `;
 
 export const Content = styled.div`
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: 1fr 30%;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 1150px;
-  padding: 40px;
+
+ 
 `;

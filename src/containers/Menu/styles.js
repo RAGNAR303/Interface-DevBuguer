@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 import banner from '../../assets/Hamburguerhome.svg';
-import background from '../../assets/background1.png';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   width: 100%;
   min-height: 100vh;
-  
 `;
 
 export const Banner = styled.div`
@@ -21,7 +19,8 @@ export const Banner = styled.div`
   background-color: #000000ff;
 
   h1 {
-    color: #f17535;
+    color: ${(props) => props.theme.orange};
+
     font-size: 50px;
     font-family: 'Lilita One', sans-serif;
     position: absolute;
@@ -44,11 +43,6 @@ export const Content = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  /* background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('${background}');
-  background-position: center;
-  background-color: #121218ff; */
 `;
 
 export const CategoryMenu = styled.div`
@@ -56,7 +50,8 @@ export const CategoryMenu = styled.div`
   justify-content: center;
   gap: 30px;
   margin-bottom: 100px;
-  background-color: #121f25ff;
+  background: ${(props) => props.theme.gray};
+
   padding: 5px 10px;
   border-radius: 5px;
 `;
@@ -76,8 +71,10 @@ export const CategoryButton = styled(Link)`
     color,
     background,
     0.3s ease-in;
-  color: ${(props) => (props.$isActiveCategory ? '#121f25ff' : '#ffe079ff')};
-  background: ${(props) => (props.$isActiveCategory ? '#f17535' : 'none')};
+  color: ${(props) =>
+    props.$isActiveCategory ? `${props.theme.gray}` : `${props.theme.amber}`};
+  background: ${(props) =>
+    props.$isActiveCategory ? `${props.theme.orange}` : 'none'};
 
   &:hover {
     transform: scale(1.05);

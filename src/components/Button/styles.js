@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
   width: 100%;
-  background-color: #f17535;
+  background-color: ${(props) => props.theme.orange};
+
   color: #fff;
   font-weight: 900;
   font-size: 20px;

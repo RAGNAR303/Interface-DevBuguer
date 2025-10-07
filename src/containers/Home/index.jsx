@@ -5,7 +5,7 @@ import {
   HomeCarousel,
   CategoriesCarousel,
 } from '../../components';
-import { useUser } from '../../hooks/UserContext';
+
 export function Home() {
   return (
     <main>

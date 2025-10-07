@@ -15,6 +15,11 @@ import LogoPng from '../../assets/logo.png';
 import { Button, Input } from '../../components';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import {
+  EnvelopeSimpleIcon,
+  LockSimpleIcon,
+  UserIcon,
+} from '@phosphor-icons/react';
 
 export function Register() {
   const navigate = useNavigate();
@@ -83,29 +88,34 @@ export function Register() {
       </LeftContainer>
       <RightContainer>
         <Title>
-          Crie sua <span>Conta.</span>
+          Olá, Crie sua conta no <span>Dev Burguer!</span> Cadastre com suas
+          <span> Informações.</span>
         </Title>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
-            label={'Nome'}
+            icon={<UserIcon size={20} weight="fill" />}
+            placeholder={'Nome'}
             type={'text'}
             error={errors.name?.message}
             {...register('name')}
           />
           <Input
-            label={'E-mail'}
+            icon={<EnvelopeSimpleIcon size={20} weight="fill" />}
+            placeholder={'E-mail'}
             type={'email'}
             error={errors.email?.message}
             {...register('email')}
           />
           <Input
-            label={'Senha'}
+            icon={<LockSimpleIcon size={20} weight="fill" />}
+            placeholder={'Senha'}
             type={'password'}
             error={errors.password?.message}
             {...register('password')}
           />
           <Input
-            label={'Confirme a senha'}
+            icon={<LockSimpleIcon size={20} weight="fill" />}
+            placeholder={'Confirme a senha'}
             type={'password'}
             error={errors.ConfirmPassword?.message}
             {...register('ConfirmPassword')}

@@ -6,18 +6,25 @@ export const Root = styled.table`
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
   backdrop-filter: blur(20px);
+ 
+ 
 `;
 
 export const Header = styled.thead`
-  background-color: #121f25ff;
+  background: ${(props) => props.theme.gray};
+
 `;
-export const Tr = styled.tr``;
+export const Tr = styled.tr`
+  
+`;
 
 export const Th = styled.th`
   padding: 16px;
   font-size: 18px;
   text-transform: uppercase;
-  color: #ffe079ff;
+  color: ${(props) => props.theme.amber};
+
+
   text-align: center;
   border-bottom: 1px solid #f17535;
 
