@@ -45,7 +45,7 @@ export function Products() {
       try {
         const { data } = await api.get('/products');
         setProducts(data);
-        console.log(data);
+
       } catch (error) {
         console.error('Erro ao carregar produtos:', error);
       }

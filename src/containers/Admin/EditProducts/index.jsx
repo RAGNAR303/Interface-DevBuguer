@@ -46,7 +46,7 @@ export function EditProducts() {
     state: { product },
   } = useLocation();
 
-  console.log(product);
+
 
   useEffect(() => {
     // quando carrega a tela ele tras a info de categorias

@@ -51,7 +51,7 @@ export function Orders() {
   }, [filteredOrders]);
 
   function handleStatus(status) {
-    console.log({ status });
+
     if (status.id === 0) {
       setFilteredOrders(orders);
     } else {

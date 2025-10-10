@@ -64,13 +64,13 @@ export function Login() {
           } else {
             navigate('/');
           }
-          console.log({ userData });
+      
         }, 2000);
         toast.success('Login realizado com sucesso');
       } else if (status === 401) {
         toast.error('Usuário não cadastrado!, Se cadastre para continuar  ');
       } else throw new Error();
-      console.log(userData);
+     
       putUserData(userData);
 
       // eslint-disable-next-line no-unused-vars

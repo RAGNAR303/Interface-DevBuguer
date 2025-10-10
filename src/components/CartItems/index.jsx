@@ -14,7 +14,6 @@ export function CartItems() {
   const { cartProducts, deleteProduct, increaseProduct, decreaseProduct } =
     useCart();
 
-  console.log(cartProducts);
 
   return (
     <Table.Root>

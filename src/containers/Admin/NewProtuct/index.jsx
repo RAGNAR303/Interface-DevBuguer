@@ -64,7 +64,7 @@ export function NewProtuct() {
     // quando carrega a tela ele tras a info de categorias
     async function loadCategories() {
       const { data } = await api.get('/categories');
-      console.log(data);
+
       setCategories(data);
     }
 

@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const increaseProduct = (productId) => {
-    console.log(productId);
+
 
     const newCart = cartProducts.map((prd) => {
       return prd.id === productId

@@ -38,7 +38,7 @@ export default function CheckoutForm() {
       redirect: 'if_required',
     });
 
-    console.log(paymentIntent);
+
 
     if (error) {
       setMessage(error.message);
