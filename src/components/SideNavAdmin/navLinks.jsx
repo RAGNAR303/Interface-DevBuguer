@@ -8,15 +8,15 @@ export const navLinks = [
     icon: <ReceiptIcon size={32} weight="bold" />,
   },
   {
-    id: 1,
+    id: 2,
     label: 'Produtos',
     path: '/admin/produtos',
     icon: <ListIcon size={32} weight="bold" />,
   },
   {
-    id: 1,
+    id: 3,
     label: 'Novo Produto',
-    path: '/admin//novo-produto',
+    path: '/admin/novo-produto',
     icon: <ListPlusIcon size={32} weight="bold" />,
   },
 ];

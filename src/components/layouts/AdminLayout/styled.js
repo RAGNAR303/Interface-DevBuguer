@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: minmax(220px, 260px) 1fr;
+  grid-template-columns: minmax(220px, 230px) 1fr;
 
   main {
     display: flex;

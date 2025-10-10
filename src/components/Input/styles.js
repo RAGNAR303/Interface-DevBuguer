@@ -29,6 +29,7 @@ export const InputContainer = styled.div`
   input::placeholder {
     color: ${(props) => props.theme.orange};
     font-weight: 900;
+   
   }
 
   input:-webkit-autofill,

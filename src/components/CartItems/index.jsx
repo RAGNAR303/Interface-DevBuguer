@@ -9,12 +9,11 @@ import {
   ProductImg,
   LinkCart,
 } from './styles';
-import { useNavigate } from 'react-router-dom';
 
 export function CartItems() {
   const { cartProducts, deleteProduct, increaseProduct, decreaseProduct } =
     useCart();
-  const navigate = useNavigate;
+
   console.log(cartProducts);
 
   return (

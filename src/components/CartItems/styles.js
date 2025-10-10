@@ -36,7 +36,21 @@ export const LinkCart = styled(Link)`
   font-weight: 900;
   color: #fff;
   transition: color 300ms ease-in-out;
+  animation: pulsar 0.4s ease-in-out infinite linear;
+
   &:hover {
     color: #ffe079;
+  }
+
+  @keyframes pulsar {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 `;

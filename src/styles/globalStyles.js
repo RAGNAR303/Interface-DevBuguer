@@ -23,7 +23,7 @@ body{
     url('${background}');
      background-color: #121218ff;
  
-     color: #fff;
+
 }
 
 

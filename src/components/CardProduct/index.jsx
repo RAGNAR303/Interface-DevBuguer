@@ -4,6 +4,7 @@ import { CardImg, Container, Content, ContainerButton, Offer } from './styles';
 import PropTypes from 'prop-types';
 import { useCart } from '../../hooks/CartContext';
 import { useNavigate } from 'react-router-dom';
+import ProductRating from '../Rating';
 
 CardProduct.PropTypes = {
   product: PropTypes.object,
@@ -23,6 +24,7 @@ export function CardProduct({ product }) {
       <Content>
         <h3>{product.name}</h3>
         <p>{product.description}</p>
+        <ProductRating />
       </Content>
       <ContainerButton>
         <strong>{product.currencyValue}</strong>
