@@ -4,20 +4,21 @@ export const Container = styled.div`
   padding: 16px;
   border-radius: 10px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 
+  flex-direction: column;
+  color: ${(props) => props.theme.white};
   margin-bottom: 20px;
   border-collapse: collapse;
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
 
   .container-top {
     display: grid;
     grid-gap: 10px 20%;
     padding-bottom: 10px;
     font-weight: 500;
+    justify-content: space-between;
     grid-template-areas:
       'title title'
       'items items-price'

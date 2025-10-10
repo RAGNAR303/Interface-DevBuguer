@@ -67,7 +67,8 @@ export const Form = styled.form`
   flex-direction: column;
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   padding: 20px;
   border-radius: 10px;
   gap: 20px;

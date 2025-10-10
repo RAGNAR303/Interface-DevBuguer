@@ -9,4 +9,5 @@ export const standardTheme = {
   black: '#000',
   gray: '#121f25ff',
   gray50: '#121f2587',
+  blur: '10px',
 };

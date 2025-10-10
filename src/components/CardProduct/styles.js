@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   display: flex;
   align-items: center;
   justify-content: end;

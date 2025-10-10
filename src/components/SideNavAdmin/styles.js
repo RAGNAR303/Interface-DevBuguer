@@ -6,11 +6,11 @@ export const Container = styled.div`
   flex-direction: column;
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   border-radius: 0 10px 10px 0;
   gap: 20px;
   height: 100vh;
-
 
   img {
     width: 40%;
@@ -41,7 +41,6 @@ export const NavLink = styled(Link)`
   margin-top: 10px;
   padding: 10px 10px;
   border-radius: 10px;
-
 
   &:hover {
     color: ${(props) => props.theme.gray};

@@ -7,7 +7,8 @@ export const Container = styled.header`
   align-items: center;
   padding: 10px 8%;
   background: linear-gradient(180deg, #121f25ff 20%, #121f2587 100%);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   position: fixed;
   z-index: 99;
   top: 0;
@@ -58,15 +59,16 @@ export const Profile = styled.div`
   align-items: center;
   justify-content: center;
   color: ${(props) => props.theme.amber};
-
   p {
     font-weight: 900;
-    color: #fff;
+    color: ${(props) => props.theme.white};
     font-size: 15px;
   }
 
   span {
     color: ${(props) => props.theme.amber};
+    font-weight: 900;
+    text-transform: uppercase;
   }
 `;
 
@@ -89,6 +91,18 @@ export const Logout = styled.button`
     color: ${(props) => props.theme.redHover};
 
     background: ${(props) => props.theme.gray};
+  }
+`;
+
+export const Login = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: color 300ms ease-in-out;
+  color: ${(props) => props.theme.amber};
+
+  &:hover {
+    color: ${(props) => props.theme.orange};
   }
 `;
 

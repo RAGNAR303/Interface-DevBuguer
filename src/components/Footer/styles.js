@@ -9,7 +9,8 @@ export const Container = styled.div`
   justify-content: center;
   background: ${(props) => props.theme.gray};
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   padding: 10px;
   h1 {
     color: #fff;

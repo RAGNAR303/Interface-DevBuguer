@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { pulsar } from '../../styles/themes/animations';
 
 export const ProductImg = styled.img`
   width: 100px;
@@ -36,21 +37,9 @@ export const LinkCart = styled(Link)`
   font-weight: 900;
   color: #fff;
   transition: color 300ms ease-in-out;
-  animation: pulsar 0.4s ease-in-out infinite linear;
+  animation: ${pulsar} 0.4s ease-in-out infinite;
 
   &:hover {
     color: #ffe079;
-  }
-
-  @keyframes pulsar {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.02);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
 `;

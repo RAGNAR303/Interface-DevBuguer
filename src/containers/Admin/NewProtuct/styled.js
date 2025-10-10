@@ -14,7 +14,8 @@ export const Form = styled.form`
   justify-content: center;
   border: 2px solid #121f25ff;
   background: linear-gradient(180deg, #121f25ff 50%, #121f2587 100%);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(${(props) => props.theme.blur});
+
   padding: 20px;
   border-radius: 10px;
   gap: 20px;
@@ -28,7 +29,7 @@ export const InputContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
   span {
     color: ${(props) => props.theme.redHover};
     font-size: 10px;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { pulsar } from '../../styles/themes/animations';
 
 export const ButtonContainer = styled.button`
   width: 100%;
@@ -15,6 +16,7 @@ export const ButtonContainer = styled.button`
   p {
     transition: 0.2s ease-in-out;
     text-transform: uppercase;
+    animation: ${pulsar} 1000ms ease-in-out infinite;
   }
 
   p:hover {
