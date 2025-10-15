@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3002',
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 // pega o token que esta localstorege, e retorna para aplicação, para back-end verifique se esta autenticado

@@ -22,10 +22,11 @@ export const TableCellProducts = styled(TableCell)`
   text-align: center !important;
 `;
 
-export const ImgProduct = styled.img`
-  width: 100px;
-  height: 100px;
 
+
+export const ImgProduct = styled.img`
+  width: 130px;
+  height: 80px;
   object-fit: cover;
 `;
 
